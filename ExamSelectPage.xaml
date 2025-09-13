@@ -1,0 +1,22 @@
+﻿<Page x:Class="CharuEval.ExamSelectionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="clr-namespace:CharuEval"
+      Title="ExamSelectionPage">
+
+    <Grid Background="#f4f9ff" Margin="30">
+        <StackPanel>
+            <!-- ❌ Close Button -->
+            <local:CloseButtonControl />
+            <TextBlock Text="Select Your Exam"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       Margin="0,0,0,20"
+                       HorizontalAlignment="Center"/>
+
+            <ItemsControl x:Name="ExamList"/>
+        </StackPanel>
+    </Grid>
+</Page>
+
+

@@ -1,0 +1,77 @@
+﻿<Page x:Class="CharuEval.CreateExamPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
+      xmlns:local="clr-namespace:CharuEval"
+      Title="CreateExamPage">
+    
+    
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="40" Width="500" HorizontalAlignment="Center">
+            <!-- ❌ Close Button -->
+            <local:CloseButtonControl />
+            <Button x:Name="BackButton"
+    Width="40" Height="40"
+    HorizontalAlignment="Left"
+    VerticalAlignment="Top"
+    Margin="10"
+    Click="BackButton_Click"
+    Background="#3f51b5"
+    BorderBrush="#3f51b5"
+    ToolTip="Back to Questions"
+    Cursor="Hand"
+    BorderThickness="0" RenderTransformOrigin="0.758,0.492">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="{TemplateBinding Background}"/>
+                            <Path Data="M 20,10 L 10,20 L 20,30"
+                    Stroke="White"
+                    StrokeThickness="4"
+                    StrokeStartLineCap="Round"
+                    StrokeEndLineCap="Round"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top" RenderTransformOrigin="1.258,0.531" Margin="4,0,0,0"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <TextBlock Text="Create New Exam" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+
+            <!-- Subject Name -->
+            <TextBox x:Name="SubjectBox" Text="Subject Name" Foreground="Gray" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+
+            <!-- Exam Date -->
+            <DatePicker x:Name="ExamDatePicker" Margin="0,5" SelectedDate="{x:Static sys:DateTime.Now}"/>
+
+            <!-- Exam Time -->
+            <TextBox x:Name="TimeBox" Text="Start Time (e.g., 10:00 AM)" Margin="0,5" Height="35" Foreground="Gray" GotFocus="TimeBox_GotFocus" LostFocus="TimeBox_LostFocus"/>
+
+            <!-- Duration -->
+            <TextBox x:Name="DurationBox" Text="Duration in minutes" Margin="0,5" Height="35" Foreground="Gray" GotFocus="DurationBox_GotFocus" LostFocus="DurationBox_LostFocus"/>
+
+            <!-- Instruction -->
+            <TextBox x:Name="InstructionBox" Text="Instructions (optional)" Margin="0,5" Height="70" AcceptsReturn="True" Foreground="Gray" GotFocus="InstructionBox_GotFocus" LostFocus="InstructionBox_LostFocus"/>
+
+            <!-- Add Question Section -->
+            <TextBlock Text="Add Questions" FontSize="16" FontWeight="Bold" Margin="0,20,0,5"/>
+            <ComboBox x:Name="QuestionTypeSelector" Margin="0,5">
+                <ComboBoxItem Content="MCQ"/>
+                <ComboBoxItem Content="Text"/>
+                <ComboBoxItem Content="Coding"/>
+            </ComboBox>
+
+            <Button Content="Add Question" Margin="0,5" Click="AddQuestion_Click"/>
+
+            <!-- External Import -->
+            <TextBlock Text="Import from External" FontSize="16" FontWeight="Bold" Margin="0,20,0,5"/>
+            <Button Content="Choose from LeetCode/HackerRank" Margin="0,5" Click="ImportFromLeetcode_Click"/>
+            <Button Content="Upload Word/Excel" Margin="0,5" Click="UploadFile_Click"/>
+
+            <!-- Save Exam -->
+            <Button Content="Save Exam" Background="#3f51b5" Foreground="White"
+                    FontWeight="Bold" Height="40" Margin="0,30,0,0" Click="SaveExam_Click"/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

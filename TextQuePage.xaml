@@ -1,0 +1,72 @@
+﻿<Page x:Class="CharuEval.TextQuestionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="TextQuestionPage" Background="#f4f9ff">
+
+    <Grid Margin="30">
+        
+
+        <Border Background="White" CornerRadius="10" Padding="20" BorderBrush="#c5d9ff" BorderThickness="1">
+            <StackPanel>
+                <!-- Navigation Arrow (Top Left) -->
+
+                <Button x:Name="BackButton"
+                        Width="40" Height="40"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Margin="10"
+                        Click="BackButton_Click"
+                        Background="#3f51b5"
+                        BorderBrush="#3f51b5"
+                        ToolTip="Back to Questions"
+                        Cursor="Hand"
+                        BorderThickness="0" RenderTransformOrigin="0.758,0.492">    
+                    <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse Fill="{TemplateBinding Background}"/>
+                                        <Path Data="M 20,10 L 10,20 L 20,30"
+                                            Stroke="White"
+                                            StrokeThickness="4"
+                                            StrokeStartLineCap="Round"
+                                            StrokeEndLineCap="Round"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Top" RenderTransformOrigin="1.258,0.531" Margin="4,0,0,0"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Label x:Name="TimerLabel" FontSize="14" Foreground="Red" HorizontalAlignment="Right"/>
+                <!-- Question Heading -->
+                <TextBlock Text="Question 4: Implement Stack using Arrays" 
+                           FontSize="16" FontWeight="Bold" Foreground="#333"/>
+
+                <!-- Full Question Text -->
+                <TextBlock Text="Write a C++ class to implement a stack using arrays. Include push, pop, isEmpty, and display functions." 
+                           TextWrapping="Wrap" Margin="0,10" FontSize="14"/>
+
+                <!-- Marks -->
+                <TextBlock Text="Marks: 15" FontSize="12" Foreground="Gray" Margin="0,5"/>
+
+                <!-- Text Answer Input -->
+                <TextBlock Text="Your Answer:" FontWeight="SemiBold" Margin="0,15,0,5"/>
+                <TextBox x:Name="AnswerBox"
+                         AcceptsReturn="True" 
+                         VerticalScrollBarVisibility="Visible"
+                         TextWrapping="Wrap"
+                         Height="200"
+                         FontFamily="Consolas"
+                         FontSize="13"
+                         Padding="10"
+                         Background="#f9f9f9"
+                         BorderBrush="#cccccc" BorderThickness="1"/>
+
+                <!-- Submit/Next Button -->
+                <Button Content="Submit Answer" Height="40" Background="#3f51b5" Foreground="White"
+                        FontWeight="Bold" Margin="0,20,0,0" Click="Submit_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
+
+

@@ -1,0 +1,77 @@
+﻿<Page x:Class="CharuEval.CodeQuestionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="CodeQuestionPage" Background="#f4f9ff">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="30">
+            <Button x:Name="BackButton"
+                        Width="40" Height="40"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Margin="10"
+                        Click="BackButton_Click"
+                        Background="#3f51b5"
+                        BorderBrush="#3f51b5"
+                        ToolTip="Back to Questions"
+                        Cursor="Hand"
+                        BorderThickness="0" RenderTransformOrigin="0.758,0.492">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="{TemplateBinding Background}"/>
+                            <Path Data="M 20,10 L 10,20 L 20,30"
+                                            Stroke="White"
+                                            StrokeThickness="4"
+                                            StrokeStartLineCap="Round"
+                                            StrokeEndLineCap="Round"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Top" RenderTransformOrigin="1.258,0.531" Margin="4,0,0,0"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Label x:Name="TimerLabel" FontSize="14" Foreground="Red" HorizontalAlignment="Right"/>
+
+            <!-- Question Info -->
+            <TextBlock Text="Question 5: Find the Factorial of a Number" 
+                       FontSize="16" FontWeight="Bold" Foreground="#333"/>
+            <TextBlock Text="Write a program that calculates the factorial of a number using recursion. Input is a single integer. Output should be the factorial result." 
+                       TextWrapping="Wrap" Margin="0,10" FontSize="14"/>
+            <TextBlock Text="Marks: 10" FontSize="12" Foreground="Gray" Margin="0,0,0,10"/>
+
+            <!-- Language Selection -->
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <TextBlock Text="Language:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <ComboBox x:Name="LanguageSelector" Width="150">
+                    <ComboBoxItem Content="C++" Tag="54" IsSelected="True"/>
+                    <ComboBoxItem Content="Python" Tag="71"/>
+                    <ComboBoxItem Content="Java" Tag="62"/>
+                </ComboBox>
+            </StackPanel>
+
+            <!-- Code Editor -->
+            <TextBlock Text="Your Code:" FontWeight="SemiBold" Margin="0,10,0,5"/>
+            <TextBox x:Name="CodeEditor" AcceptsReturn="True" FontFamily="Consolas" FontSize="13"
+                     Height="250" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Padding="10"
+                     Background="#f9f9f9" BorderBrush="#cccccc" BorderThickness="1"/>
+
+            <!-- Custom Input -->
+            <TextBlock Text="Custom Input (optional):" FontWeight="SemiBold" Margin="0,10,0,5"/>
+            <TextBox x:Name="InputBox" Height="60" TextWrapping="Wrap" Padding="10" Background="#fffdf9"
+                     BorderBrush="#cccccc" BorderThickness="1" FontFamily="Consolas" FontSize="13"/>
+
+            <!-- Run Button -->
+            <Button Content="▶ Run Code" Height="40" Width="120" HorizontalAlignment="Left" Margin="0,15,0,0"
+                    Background="#3f51b5" Foreground="White" FontWeight="Bold" Click="RunCode_Click"/>
+
+            <!-- Output Section -->
+            <TextBlock Text="Output:" FontWeight="Bold" Margin="0,20,0,5"/>
+            <TextBox x:Name="OutputBox" Height="100" IsReadOnly="True" TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Auto" FontFamily="Consolas" FontSize="13"
+                     Background="#f3f3f3" Padding="10" BorderBrush="#cccccc" BorderThickness="1"/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
+
