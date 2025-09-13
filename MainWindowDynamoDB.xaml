@@ -1,0 +1,22 @@
+<Window x:Class="DynamoDBWpfTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DynamoDB WPF Test" Height="250" Width="400">
+    <Grid Margin="10">
+        <StackPanel>
+            <!-- ID TextBox with placeholder using attached behavior -->
+            <TextBox x:Name="IdBox" Margin="0,5"
+                     Foreground="Black"
+                     Text=""/>
+            <!-- Name TextBox with placeholder using attached behavior -->
+            <TextBox x:Name="NameBox" Margin="0,5"
+                     Foreground="Gray"
+                     Text=""/>
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Button Content="Insert" Width="100" Margin="0,0,10,0" Click="Insert_Click"/>
+                <Button Content="Fetch" Width="100" Click="Fetch_Click"/>
+            </StackPanel>
+            <TextBlock x:Name="ResultBlock" FontSize="14" TextWrapping="Wrap" Margin="0,10"/>
+        </StackPanel>
+    </Grid>
+</Window>
