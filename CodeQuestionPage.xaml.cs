@@ -16,7 +16,7 @@ namespace CharuEval
         private const string Judge0Url = "https://judge0-ce.p.sulu.sh/submissions?base64_encoded=false&wait=true";
 
         // ✅ Replace with your actual key from Sulu dashboard
-        private const string SuluApiKey = "sk_live_q2jqQGLSAtoR0kb5S4O1qKV1AMdNofoI";
+        private const string SuluApiKey = "";
 
         public CodeQuestionPage()
         {
@@ -111,3 +111,4 @@ namespace CharuEval
         }
     }
 }
+
