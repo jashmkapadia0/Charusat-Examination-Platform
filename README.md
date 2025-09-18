@@ -2,29 +2,29 @@
 
 # 🎓 CHARUSAT Practical Examination Environment
 
-A secure, full-screen desktop application for conducting practical coding exams (like Safe Exam Browser) with auto-evaluation, multiple language support, and restricted system access.
+A secure, full-screen desktop application for conducting practical MCQ, Text, Coding exams (like Safe Exam Browser) with auto-evaluation, multiple language support, and restricted system access.
 
 ---
 
 ## 🚀 Features
 
 - 🔒 Secure full-screen exam environment (Alt+Tab, browser, Task Manager blocked)
-- 💻 Supports coding in Python, C, C++, Java, and HTML
+- 💻 Supports coding in Python, C, C++, Java
 - 🧪 LeetCode-style test case execution and auto-scoring
 - 🗂️ Teacher dashboard with student ID, scores, and code submissions
-- 🐳 Docker sandbox for safe code execution (offline capable)
-- 📊 Submissions and scores stored in a database (MySQL/PostgreSQL)
+- 🐳 AWS EC2 Ubuntu Server Docker sandbox for safe code execution 
+- 📊 Submissions and scores stored in a database
 - 🧱 Built for CHARUSAT exam labs
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Component          | Technology        |
-|--------------------|-------------------|
-| Frontend (Student) | .NET WPF (C#)     |
-| Backend API        | Python (Flask/FastAPI) |
-| Code Execution     | Docker Sandbox    |
-| Database           | PostgreSQL/MySQL  |
+| Component          | Technology                     |
+|--------------------|--------------------------------|
+| Frontend           | .NET WPF (C#)                  |
+| Server             | AWS EC2 Instance Ubuntu 22.04  |
+| Code Execution     | Docker Judge0                  |
+| Database           | AWS DynamoDB                   |
 
 
